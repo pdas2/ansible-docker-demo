@@ -1,0 +1,10 @@
+mariadb:
+  image: mariadb
+  environment:
+      MYSQL_ROOT_PASSWORD: ramit
+wordpress:
+  image: wordpress
+  links:
+    - mariadb:mariadb
+  ports:
+    - 8080:80
